@@ -522,6 +522,7 @@ p{ line-height: var(--lh); }
   color: rgba(110,231,255,0.92);
   white-space: normal;
 }
+
 /* Highlight line: subtle dynamic glow (not harsh blinking) */
 .highlight-line{
   margin-top: 12px;
@@ -611,6 +612,7 @@ p{ line-height: var(--lh); }
     animation: none !important;
   }
 }
+
 
 /* Results table */
 .table{
