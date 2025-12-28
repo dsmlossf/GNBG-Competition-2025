@@ -593,6 +593,43 @@ p{ line-height: var(--lh); }
   animation: highlightSheen 2.4s ease-in-out infinite;
   pointer-events:none;
 }
+/* Links row inside your highlight-line */
+.highlight-links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Make each link look like a pill button */
+.highlight-links a{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.90);
+  text-decoration: none;
+  position: relative;
+  z-index: 2; /* stays above the sheen ::after */
+}
+
+.highlight-links a:hover{
+  text-decoration: none;
+  border-color: rgba(110,231,255,0.30);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+}
+
+/* Optional: prevent awkward wrapping inside a pill */
+.highlight-links a b{
+  white-space: nowrap;
+}
+
 
 /* small animated dot */
 .highlight-line .dot{
