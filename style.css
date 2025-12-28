@@ -497,12 +497,26 @@ p{ line-height: var(--lh); }
 }
 @media (max-width: 720px){ .grid-2{ grid-template-columns: 1fr; } }
 /* Pills (3 lines, range on new line + highlighted) */
+/* pillbox base (no forced layout here) */
 .pillbox{
-  display: flex;
-  flex-direction: column;   /* 3 lines */
-  gap: 10px;
   margin-top: 6px;
+  display: flex;
+  gap: 10px;
 }
+
+/* stacked: each pill on its own line */
+.pillbox.stack{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* flow: pills one after another, wrap naturally */
+.pillbox.flow{
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 
 .pill{
   display: inline-block;
