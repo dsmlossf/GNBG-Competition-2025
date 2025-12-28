@@ -517,15 +517,12 @@ p{ line-height: var(--lh); }
 }
 
 .pill .range{
-  display: block;            /* force new line */
-  margin-top: 6px;
-  width: fit-content;
+  display: inline-block;     /* NOT block */
   padding: 4px 10px;
   border-radius: 999px;
   font-weight: 900;
   color: rgba(8,10,18,0.95);
   background: linear-gradient(135deg, rgba(110,231,255,0.95), rgba(192,132,252,0.92));
-  border: 0;
 }
 
 
