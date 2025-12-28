@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GNBG-II Numerical Global Optimization Competition | GECCO 2025 & CEC 2025</title>
+
+  <!-- Fonts (optional, safe fallbacks included) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="topbar" id="top">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="GNBG-II Home">
+        <span class="brand-logos" aria-hidden="true">
+          <img src="assets/logo.png" alt="" />
+          <img src="assets/logo2.png" alt="" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-title">GNBG-II Competition</span>
+          <span class="brand-sub">GECCO 2025 & CEC 2025</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#feed">Feed</a>
+        <a href="#results">Results</a>
+        <a href="#submission">Submission</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <div class="badge">🏆 Competition • 24 GNBG-II instances • 31 runs each • Black-box</div>
+        <h1>GNBG-II Numerical Global Optimization</h1>
+        <p class="lead">
+          A property-controlled test suite spanning unimodal to multi-component multimodal landscapes
+          (conditioning, asymmetry, interactions, basin response, deceptiveness).
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#feed">Explore feed</a>
+          <a class="btn ghost" href="#submission">How to submit</a>
+        </div>
+        <div class="meta">
+          <span>Stop criteria: f1–f15: 500k FEs • f16–f24: 1M FEs</span>
+          <span>Code: MATLAB / Python / C++</span>
+        </div>
+      </div>
+
+      <div class="hero-card" role="img" aria-label="Example GNBG-II landscapes">
+        <div class="hero-grid">
+          <figure class="shot">
+            <img src="assets/fig1.jpg" alt="Example GNBG landscape 1" loading="lazy" />
+            <figcaption>Example 2D landscape</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/fig2.jpg" alt="Example GNBG landscape 2" loading="lazy" />
+            <figcaption>Example 2D landscape</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls (Pinterest-like) -->
+  <section class="controls" id="feed">
+    <div class="wrap controls-inner">
+      <div class="search">
+        <span class="search-ico" aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="Search cards (rules, evaluation, deadline, code…)" autocomplete="off" />
+      </div>
+
+      <div class="chips" role="tablist" aria-label="Filters">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="news" role="tab">News</button>
+        <button class="chip" data-filter="overview" role="tab">Overview</button>
+        <button class="chip" data-filter="rules" role="tab">Rules</button>
+        <button class="chip" data-filter="evaluation" role="tab">Evaluation</button>
+        <button class="chip" data-filter="submission" role="tab">Submission</button>
+        <button class="chip" data-filter="results" role="tab">Results</button>
+        <button class="chip" data-filter="contact" role="tab">Contact</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Masonry Feed -->
+  <main class="wrap">
+    <section class="masonry" id="masonry" aria-label="Competition feed">
+
+      <!-- NEWS -->
+      <article class="pin" data-tags="news code github benchmark">
+        <header class="pin-head">
+          <span class="tag">News</span>
+          <h3>Benchmark code (MATLAB / Python / C++)</h3>
+          <p>GNBG-II instances + wrappers. Treat instances as black-box.</p>
+        </header>
+        <div class="pin-actions">
+          <a class="btn small" href="https://github.com/rohitsalgotra/GNBG-II" target="_blank" rel="noreferrer">Open GitHub</a>
+          <a class="btn small ghost" href="#overview">What’s inside?</a>
+        </div>
+      </article>
+
+      <article class="pin" data-tags="news pdf instances documentation">
+        <header class="pin-head">
+          <span class="tag">News</span>
+          <h3>Support document (f1–f24)</h3>
+          <p>Instance descriptions and guidance. Add your PDF link when ready.</p>
+        </header>
+        <div class="callout">
+          <strong>TODO:</strong> replace <code>#</code> with your PDF URL.
+        </div>
+        <div class="pin-actions">
+          <a class="btn small" href="#" aria-disabled="true" onclick="return false;">Link coming soon</a>
+        </div>
+      </article>
+
+      <article class="pin" data-tags="news stop criteria budget evaluations">
+        <header class="pin-head">
+          <span class="tag">News</span>
+          <h3>Stop criteria (FEs)</h3>
+          <p>Hard evaluation budgets for fair comparison.</p>
+        </header>
+        <ul class="bullets">
+          <li><b>f1–f15</b>: 500,000 function evaluations</li>
+          <li><b>f16–f24</b>: 1,000,000 function evaluations</li>
+        </ul>
+      </article>
+
+      <!-- OVERVIEW -->
+      <article class="pin span-2" id="overview" data-tags="overview description suite gn bg properties">
+        <header class="pin-head">
+          <span class="tag violet">Overview</span>
+          <h3>Competition overview</h3>
+          <p>24 GNBG-II generated instances: unimodal → single-component multimodal → multi-component multimodal.</p>
+        </header>
+        <div class="grid-2">
+          <div>
+            <h4 class="mini">Suite composition</h4>
+            <ul class="bullets">
+              <li>Unimodal: f1–f6</li>
+              <li>Single-component multimodal: f7–f15</li>
+              <li>Multi-component multimodal: f16–f24</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mini">Controlled properties</h4>
+            <div class="pillbox">
+              <span class="pill">conditioning</span>
+              <span class="pill">asymmetry</span>
+              <span class="pill">variable interactions</span>
+              <span class="pill">basin response</span>
+              <span class="pill">deceptiveness</span>
+            </div>
+          </div>
+        </div>
+        <div class="pin-actions">
+          <a class="btn small" href="https://doi.org/10.1145/3712255.3734271" target="_blank" rel="noreferrer">Reference DOI</a>
+          <a class="btn small ghost" href="#organizers">Organizers</a>
+        </div>
+      </article>
+
+      <article class="pin" data-tags="overview quick links github submission">
+        <header class="pin-head">
+          <span class="tag violet">Overview</span>
+          <h3>Quick links</h3>
+          <p>Everything you’ll need in one place.</p>
+        </header>
+        <ul class="links">
+          <li><a href="https://github.com/rohitsalgotra/GNBG-II" target="_blank" rel="noreferrer"><b>GNBG-II GitHub</b></a></li>
+          <li><a href="#submission"><b>Submission instructions</b></a></li>
+          <li><a href="#results"><b>Competition results</b></a></li>
+        </ul>
+      </article>
+
+      <!-- ORGANIZERS -->
+      <article class="pin" id="organizers" data-tags="contact organizers email">
+        <header class="pin-head">
+          <span class="tag cyan">Contact</span>
+          <h3>Organizers</h3>
+          <p>Questions? Send a quick email.</p>
+        </header>
+        <div class="people">
+          <div class="person">
+            <div class="name">Amir H. Gandomi</div>
+            <div class="aff">UTS (Australia) • Óbuda University (Hungary)</div>
+            <a class="mail" href="mailto:Gandomi@uts.edu.au">Gandomi@uts.edu.au</a>
+          </div>
+          <div class="person">
+            <div class="name">Rohit Salgotra</div>
+            <div class="aff">AGH (Poland) • UTS DSI (Australia)</div>
+            <a class="mail" href="mailto:r.03dec@gmail.com">r.03dec@gmail.com</a>
+          </div>
+          <div class="person">
+            <div class="name">Kalyanmoy Deb</div>
+            <div class="aff">Michigan State University (USA)</div>
+            <a class="mail" href="mailto:kdeb@egr.msu.edu">kdeb@egr.msu.edu</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- RULES -->
+      <article class="pin span-2" data-tags="rules compliance black box forbidden tuning">
+        <header class="pin-head">
+          <span class="tag">Rules</span>
+          <h3>Rules & compliance</h3>
+          <p>Keep it fair: same parameters across instances, black-box evaluations.</p>
+        </header>
+        <ul class="bullets">
+          <li>Open to all researchers in continuous numerical optimization.</li>
+          <li>Unpublished or previously published algorithms are allowed.</li>
+          <li><b>No per-instance tuning</b>; parameters must remain consistent across all instances.</li>
+          <li><b>No use</b> of GNBG internal parameters (instances are black-box).</li>
+          <li>No changes to instance <code>.mat</code> parameter settings.</li>
+          <li>Winners must share source for verification (kept confidential).</li>
+        </ul>
+      </article>
+
+      <!-- EVALUATION -->
+      <article class="pin" data-tags="evaluation metrics error threshold">
+        <header class="pin-head">
+          <span class="tag">Evaluation</span>
+          <h3>Average absolute error</h3>
+          <p>Mean absolute error of best-found solutions across 31 runs.</p>
+        </header>
+      </article>
+
+      <article class="pin" data-tags="evaluation metrics fe threshold">
+        <header class="pin-head">
+          <span class="tag">Evaluation</span>
+          <h3>Average FEs to threshold</h3>
+          <p>Mean number of evaluations to reach absolute error &lt; 1e-8.</p>
+        </header>
+      </article>
+
+      <article class="pin" data-tags="evaluation metrics success rate">
+        <header class="pin-head">
+          <span class="tag">Evaluation</span>
+          <h3>Success rate</h3>
+          <p>Percentage of runs reaching absolute error &lt; 1e-8.</p>
+        </header>
+      </article>
+
+      <!-- SUBMISSION -->
+      <article class="pin span-2" id="submission" data-tags="submission deadline email files format">
+        <header class="pin-head">
+          <span class="tag">Submission</span>
+          <h3>Submission package</h3>
+          <p>One zipped folder named with your algorithm.</p>
+        </header>
+        <div class="grid-2">
+          <div>
+            <h4 class="mini">Include</h4>
+            <ul class="bullets">
+              <li>Documentation: title, authors, affiliations, emails, summary + mean±std tables.</li>
+              <li>24 result files: <code>f10.dat</code> etc.</li>
+              <li>Each file contains 31 runs with 2 columns: absolute error and FEs-to-threshold.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mini">Submit to</h4>
+            <div class="callout">
+              <div><a class="mail" href="mailto:r.03dec@gmail.com"><b>r.03dec@gmail.com</b></a></div>
+              <div><a class="mail" href="mailto:Gandomi@uts.edu.au"><b>Gandomi@uts.edu.au</b></a></div>
+              <div class="muted" style="margin-top:10px;"><b>Deadline:</b> 15 January 2025 (update if needed)</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- RESULTS -->
+      <article class="pin span-2" id="results" data-tags="results ranking winners score">
+        <header class="pin-head">
+          <span class="tag violet">Results</span>
+          <h3>Competition results (CEC 2025)</h3>
+          <p>Final ranking based on total weighted rank across all test cases.</p>
+        </header>
+        <div class="table">
+          <div class="trow thead">
+            <div>Rank</div><div>Algorithm</div><div>Score</div>
+          </div>
+          <div class="trow win">
+            <div><b>1</b></div><div><b>AG-GEAs</b></div><div><b>48.12</b></div>
+          </div>
+          <div class="trow">
+            <div><b>2</b></div><div><b>Modular CMAES</b></div><div><b>41.62</b></div>
+          </div>
+          <div class="trow">
+            <div><b>3</b></div><div><b>E-SHADE</b></div><div><b>30.14</b></div>
+          </div>
+        </div>
+        <div class="pin-actions">
+          <a class="btn small" href="https://drive.google.com/drive/folders/1q2G14j-ObTg3ZNitsf9NkbiGbQvyrFB5?usp=sharing" target="_blank" rel="noreferrer">Download run data</a>
+          <a class="btn small ghost" href="https://github.com/rohitsalgotra/GNBG-II" target="_blank" rel="noreferrer">Winner code</a>
+        </div>
+      </article>
+
+      <!-- CONTACT -->
+      <article class="pin" id="contact" data-tags="contact email reference doi">
+        <header class="pin-head">
+          <span class="tag cyan">Contact</span>
+          <h3>Reference</h3>
+          <p>Rohit Salgotra, Amir H. Gandomi, Kalyanmoy Deb (2025). GNBG-II Competition.</p>
+        </header>
+        <div class="callout">
+          DOI: <a href="https://doi.org/10.1145/3712255.3734271" target="_blank" rel="noreferrer"><b>10.1145/3712255.3734271</b></a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="footer-title">GNBG-II Competition</div>
+        <div class="footer-sub">© 2025 • Static site template • Pinterest-style masonry feed</div>
+      </div>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Filtering (chips + search)
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const pins = Array.from(document.querySelectorAll('.pin'));
+    const search = document.getElementById('search');
+
+    function applyFilters() {
+      const active = document.querySelector('.chip.is-active')?.dataset.filter || 'all';
+      const q = (search?.value || '').trim().toLowerCase();
+
+      pins.forEach(pin => {
+        const tags = (pin.dataset.tags || '').toLowerCase();
+        const text = pin.innerText.toLowerCase();
+
+        const matchTag = (active === 'all') || tags.includes(active);
+        const matchQuery = (!q) || text.includes(q) || tags.includes(q);
+
+        pin.style.display = (matchTag && matchQuery) ? '' : 'none';
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-selected', 'true');
+        chips.filter(c => c !== chip).forEach(c => c.setAttribute('aria-selected', 'false'));
+        applyFilters();
+      });
+    });
+
+    search?.addEventListener('input', applyFilters);
+
+    // First paint
+    applyFilters();
+  </script>
+</body>
+</html>
